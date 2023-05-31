@@ -1,0 +1,16 @@
+﻿  Building 'VTStart' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+cl : 命令行 warning D9024: 无法识别的源文件类型“CheckEnable.h”，假定为对象文件
+cl : 命令行 warning D9027: 源文件“CheckEnable.h”被忽略
+  VMEntry.c
+F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(17,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
+F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(39,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
+F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(61,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(72,38): warning C4113: “NTSTATUS (__cdecl *)()”和“PDRIVER_UNLOAD”的参数列表不同
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(70,62): warning C4100: “RegistryPath”: 未引用的形参
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(37): warning C4702: 无法访问的代码
+  VTStart.vcxproj -> F:\KernelDemo\KernelDemo\x64\Release\VTStart.sys
+  Done Adding Additional Store
+  Successfully signed: F:\KernelDemo\KernelDemo\x64\Release\VTStart.sys
+  
+  Inf2Cat task was skipped as there were no inf files to process
+  
