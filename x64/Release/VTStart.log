@@ -1,13 +1,17 @@
 ﻿  Building 'VTStart' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
-cl : 命令行 warning D9024: 无法识别的源文件类型“CheckEnable.h”，假定为对象文件
-cl : 命令行 warning D9027: 源文件“CheckEnable.h”被忽略
   VMEntry.c
 F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(17,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
 F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(39,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
-F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(61,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
-F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(72,38): warning C4113: “NTSTATUS (__cdecl *)()”和“PDRIVER_UNLOAD”的参数列表不同
-F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(70,62): warning C4100: “RegistryPath”: 未引用的形参
-F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(37): warning C4702: 无法访问的代码
+F:\KernelDemo\KernelDemo\VTStart\vtstruct.h(62,3): warning C4201: 使用了非标准扩展: 无名称的结构/联合
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(66,39): warning C4133: “函数”: 从“PHYSICAL_ADDRESS *”到“unsigned __int64 *”的类型不兼容
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(82,34): warning C4100: “driver”: 未引用的形参
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(97,62): warning C4100: “RegistryPath”: 未引用的形参
+F:\KernelDemo\KernelDemo\VTStart\VtFunc.h(21): warning C4739: 对变量“cr0”的引用超过其存储空间
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(38): warning C4739: 对变量“Cr0”的引用超过其存储空间
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(43): warning C4739: 对变量“Cr0”的引用超过其存储空间
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(44): warning C4739: 对变量“Cr0”的引用超过其存储空间
+F:\KernelDemo\KernelDemo\VTStart\VMEntry.c(28): warning C4702: 无法访问的代码
+F:\KernelDemo\KernelDemo\VTStart\VtFunc.h(21): warning C4739: 对变量“cr0”的引用超过其存储空间
   VTStart.vcxproj -> F:\KernelDemo\KernelDemo\x64\Release\VTStart.sys
   Done Adding Additional Store
   Successfully signed: F:\KernelDemo\KernelDemo\x64\Release\VTStart.sys

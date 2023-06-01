@@ -1,4 +1,4 @@
-
+#include <ntddk.h>
 typedef union
 {
 	struct
@@ -35,7 +35,7 @@ typedef union {
 		unsigned NW : 1;
 		unsigned CD : 1;
 		unsigned PG : 1;
-
+		//unsigned Reverse4 : 32;
 	};
 
 }_CR0;
@@ -58,6 +58,7 @@ typedef union
 		unsigned UNKONOWN_2 : 1;		//These are zero
 		unsigned VMXE : 1;			//It's zero in normal
 		unsigned Reserved : 18;		//These are zero
+		unsigned Reverse2 : 32;
 	};
 }_CR4;
 

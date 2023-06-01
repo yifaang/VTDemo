@@ -1,12 +1,12 @@
+#include "vtdefine.h"
 #include "vtstruct.h"
 #include <intrin.h>
-#include "vtdefine.h"
 #include <ntddk.h>
 
 //Check CPU support Virtual Technology
 BOOLEAN Check_CPUID() {
 	int Ecx[4];
-	__cpuid(Ecx,1);
+	__cpuid(Ecx, 1);
 	return (Ecx[2] >> 5) & 1;	//Ecx 第六位是否为1
 }
 //Check VT-x Enable
@@ -16,15 +16,22 @@ BOOLEAN Check_MSR() {
 }
 
 //Check VT is Enable
-BOOLEAN VT_Enable() {
-	_CR0* cr0 = (_CR0*)__readcr0();
-	_CR4* cr4 = (_CR4*)__readcr4();
-	if (cr0->PE==1 &&cr0->NE==1&&cr0->PG == 1)
+BOOLEAN VT_Support() {
+	_CR0 cr0;
+	*(PULONG64)&cr0 =__readcr0();
+	if (cr0.PE==1&&cr0.NE==1&&cr0.PG==1)
 	{
-		if (cr4->VMXE==1)  //VMX Lock
-		{
-			return TRUE;
-		}
+		return TRUE;
+	}
+	return FALSE;
+}
+
+BOOLEAN VT_Enable() {
+	_CR4 cr4;
+	*(PULONG64)&cr4 = __readcr4();
+	if (cr4.VMXE==1)
+	{
+		return TRUE;
 	}
 	return FALSE;
 }

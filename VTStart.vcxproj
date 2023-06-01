@@ -160,12 +160,12 @@
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CheckEnable.h" />
-    <ClCompile Include="VMEntry.c" />
+    <ClInclude Include="vtdefine.h" />
+    <ClInclude Include="VtFunc.h" />
+    <ClInclude Include="vtstruct.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vtdefine.h" />
-    <ClInclude Include="vtstruct.h" />
+    <ClCompile Include="VMEntry.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
