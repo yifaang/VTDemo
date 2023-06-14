@@ -167,6 +167,14 @@
   <ItemGroup>
     <ClCompile Include="VMEntry.c" />
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="amd64.asm">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ml64 /c %(filename).asm
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(filename).obj;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

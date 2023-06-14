@@ -3,6 +3,44 @@
 #include <intrin.h>
 #include <ntddk.h>
 
+
+
+
+USHORT RegGetCs();
+USHORT RegGetDs();
+USHORT RegGetEs();
+USHORT RegGetSs();
+USHORT RegGetFs();
+USHORT RegGetGs();
+
+
+
+ULONG64 GetIdtBase();
+USHORT  GetIdtLimit();
+ULONG64 GetGdtBase();
+USHORT  GetGdtLimit();
+ULONG64 RegGetRflags();
+
+USHORT GetTrSelector();
+
+void Asm_vmcall();
+
+
+
+__declspec(noinline) void   ExithandlerPoint() {
+	int VMX_Exit_Reason = 0;
+	__vmx_vmread(VM_EXIT_REASON, &VMX_Exit_Reason);
+	DbgPrint("VM_EXIT_REASON %p\n", VMX_Exit_Reason);
+	__debugbreak();
+}
+
+
+__declspec(noinline) void VmxGuest() {
+	Asm_vmcall();
+}
+
+
+
 //Check CPU support Virtual Technology
 BOOLEAN Check_CPUID() {
 	int Ecx[4];

@@ -65,6 +65,17 @@ typedef union
 typedef struct VMX_Struct{
 	PVOID VMXON_Region;
 	PVOID VMCS_Region;
+	PVOID VTStack;
 	PHYSICAL_ADDRESS VMXON_Region_PA;
 	PHYSICAL_ADDRESS VMCS_Region_PA;
 }VMX_Struct,*PVMX_Struct;
+
+typedef struct
+{
+	USHORT sel;
+	USHORT attributes;
+	ULONG32 limit;
+	ULONG64 base;
+} SEGMENT_SELECTOR;
+
+
